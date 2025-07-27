@@ -1,0 +1,523 @@
+/*
+ * Global Stylesheet for the Bridge the Gap fitness website.
+ * This file defines the color palette, typography, responsive layout
+ * rules, and reusable utility classes used across all pages. The
+ * design aims to convey professionalism and trustworthiness through
+ * clean layouts, generous whitespace and a modern colour scheme. It
+ * also includes responsive behaviours for navigation and page
+ * sections to ensure the site looks great on any device.
+ */
+
+/* Colour palette */
+:root {
+  --primary-color: #0e4d92; /* deep blue for headings and CTAs */
+  --secondary-color: #007f5f; /* rich teal for secondary actions */
+  --accent-color: #f0a202; /* warm accent used sparingly for highlights */
+  --light-gray: #f7f7f7; /* very light background for sections */
+  --dark-gray: #333333; /* dark text for high contrast */
+  --white: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+/* Base styling */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--dark-gray);
+  background-color: var(--light-gray);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header & Navigation */
+.header {
+  background-color: var(--white);
+  box-shadow: 0 2px 4px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo a {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: var(--dark-gray);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar li a:hover,
+.navbar li a.active {
+  color: var(--primary-color);
+}
+
+/* Mobile menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--dark-gray);
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
+/* Hero section */
+.hero {
+  background-color: var(--white);
+  padding: 4rem 0;
+}
+
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-text {
+  flex: 1 1 480px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+}
+
+.hero-image {
+  flex: 1 1 400px;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--shadow);
+  display: block;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: #0b3a6b; /* darken for hover */
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  background-color: #005f42; /* darken for hover */
+}
+
+/* Credentials section */
+.credentials {
+  background-color: var(--light-gray);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.credentials h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.credentials .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.credentials .card {
+  flex: 1 1 260px;
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.credentials .icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.credentials .card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.credentials .card p {
+  font-size: 0.95rem;
+}
+
+/* Services overview section */
+.services-overview {
+  background-color: var(--white);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.services-overview h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.services-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.service-card {
+  flex: 1 1 300px;
+  background-color: var(--light-gray);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-card .price {
+  font-weight: 700;
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-card .btn {
+  margin-top: 1rem;
+}
+
+/* Call to action */
+.cta {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.cta p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.cta .btn-primary {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+.cta .btn-primary:hover {
+  background-color: #005f42;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--dark-gray);
+  color: var(--white);
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* About page specific styling */
+.about-hero {
+  background-color: var(--white);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-section {
+  padding: 4rem 0;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1 1 50%;
+}
+
+.about-image {
+  flex: 1 1 40%;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--shadow);
+}
+
+/* Services detail page */
+.services-detail {
+  padding: 4rem 0;
+}
+
+.services-detail h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.service-section {
+  background-color: var(--white);
+  padding: 3rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.service-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.service-section ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.service-section li {
+  margin-bottom: 0.5rem;
+}
+
+.service-section .price {
+  font-weight: 700;
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* Contact page */
+.contact-section {
+  padding: 4rem 0;
+  background-color: var(--white);
+}
+
+.contact-section h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contact-section p {
+  text-align: center;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-form {
+  max-width: 600px;
+  background-color: var(--light-gray);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.contact-form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0b3a6b;
+}
+
+/* Gallery section (added for showcasing training photos) */
+.gallery-section {
+  background-color: var(--white);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.gallery-images img {
+  border-radius: 8px;
+  /* Allow images to sit side by side on larger screens */
+  flex: 1 1 calc(45% - 1rem);
+  max-width: 100%;
+  height: 300px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px var(--shadow);
+}
+
+/* Responsive styling */
+@media (max-width: 992px) {
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Stack navigation links vertically on mobile */
+  .navbar ul {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    border-top: 1px solid #eeeeee;
+    display: none;
+  }
+
+  .navbar ul.active {
+    display: block;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image {
+    order: -1;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+}
