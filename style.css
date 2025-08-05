@@ -1,11 +1,9 @@
 /*
- * Global Stylesheet for the Bridge the Gap fitness website.
- * This file defines the color palette, typography, responsive layout
- * rules, and reusable utility classes used across all pages. The
- * design aims to convey professionalism and trustworthiness through
- * clean layouts, generous whitespace and a modern colour scheme. It
- * also includes responsive behaviours for navigation and page
- * sections to ensure the site looks great on any device.
+ * Global Stylesheet for the Beyond Baseline Performance website.
+ * This file is adapted from the original Bridge the Gap styles and
+ * defines the colour palette, typography, responsive layout rules and
+ * reusable utility classes used across all pages. Additional styling
+ * for the brand logo image is appended at the end.
  */
 
 /* Colour palette */
@@ -32,7 +30,10 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 600;
   color: var(--primary-color);
   margin-top: 0;
@@ -445,7 +446,7 @@ p {
   background-color: #0b3a6b;
 }
 
-/* Gallery section (added for showcasing training photos) */
+/* Gallery section */
 .gallery-section {
   background-color: var(--white);
   padding: 4rem 0;
@@ -520,4 +521,24 @@ p {
   .hero-text h1 {
     font-size: 1.8rem;
   }
+}
+
+/* Logo sizing */
+/* Ensure the brand logo scales nicely within the navigation bar. */
+/* Ensure the brand logo scales nicely within the navigation bar. */
+.logo img,
+.logo-img {
+  height: 50px;
+  width: 220px;
+  object-fit: contain;
+}
+
+/* Hero logo image on the homepage */
+/* Logo displayed on the homepage hero section. Allow it to scale within its container. */
+.hero-logo {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin-bottom: 1rem;
 }

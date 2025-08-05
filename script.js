@@ -1,5 +1,5 @@
 /*
- * Script for Bridge the Gap website
+ * Script for Beyond Baseline Performance website
  * Handles the mobile navigation toggle and inserts the
  * current year into the footer automatically. Keeping
  * this logic in a separate file helps to organise code
