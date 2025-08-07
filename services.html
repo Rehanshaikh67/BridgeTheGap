@@ -78,7 +78,20 @@
             <li>Progress tracking and programme adjustments</li>
           </ul>
           <p class="price">$400 / month</p>
-          <a href="contact.html" class="btn btn-primary">Start Online Coaching</a>
+          <!-- Link directly to the coaching inquiry form so prospective clients can
+               select their preferred coaching option and provide background information. -->
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeZc78UZZxG_jbWQ0-1fGg2jhmJwDzxqPlySdzpBGAjI7Zbg/viewform" target="_blank" class="btn btn-primary">Start Online Coaching</a>
+          <!-- PayPal payment button for online coaching.
+               This form submits to PayPal and opens in a new tab. If the visitor
+               is ready to purchase without further discussion they can use this button. -->
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="paypal-form" style="margin-top: 1rem;">
+            <input type="hidden" name="cmd" value="_xclick" />
+            <input type="hidden" name="business" value="rehanshaikh67@gmail.com" />
+            <input type="hidden" name="item_name" value="Online Coaching (monthly)" />
+            <input type="hidden" name="amount" value="400" />
+            <input type="hidden" name="currency_code" value="USD" />
+            <button type="submit" class="btn btn-secondary">Pay $400 via PayPal</button>
+          </form>
         </div>
 
         <!-- In-Person Training -->
@@ -106,7 +119,17 @@
             <li>Optional nutrition and lifestyle guidance</li>
           </ul>
           <p class="price">$160 / hour</p>
-          <a href="contact.html" class="btn btn-primary">Book an In‑Person Session</a>
+          <!-- Link directly to the coaching inquiry form for in‑person training -->
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeZc78UZZxG_jbWQ0-1fGg2jhmJwDzxqPlySdzpBGAjI7Zbg/viewform" target="_blank" class="btn btn-primary">Book an In‑Person Session</a>
+          <!-- PayPal payment button for a single in‑person training session -->
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="paypal-form" style="margin-top: 1rem;">
+            <input type="hidden" name="cmd" value="_xclick" />
+            <input type="hidden" name="business" value="rehanshaikh67@gmail.com" />
+            <input type="hidden" name="item_name" value="In‑Person Training Session" />
+            <input type="hidden" name="amount" value="160" />
+            <input type="hidden" name="currency_code" value="USD" />
+            <button type="submit" class="btn btn-secondary">Pay $160 via PayPal</button>
+          </form>
         </div>
       </div>
     </section>

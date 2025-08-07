@@ -52,7 +52,15 @@
           below and I’ll get back to you within 24 hours. I look forward to
           hearing from you!
         </p>
-        <form class="contact-form" action="#" method="post">
+        <!--
+          Use FormSubmit to send form submissions directly to the site owner’s
+          email address. FormSubmit is a free service that forwards form
+          responses to a specified email without requiring server‑side code.
+          When someone submits this form it will be sent to rehanshaikh67@gmail.com.
+        -->
+        <form class="contact-form" action="https://formsubmit.co/rehanshaikh67@gmail.com" method="POST" target="_blank">
+          <!-- Disable captcha so visitors aren’t prompted for a robot check -->
+          <input type="hidden" name="_captcha" value="false" />
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required />
 
