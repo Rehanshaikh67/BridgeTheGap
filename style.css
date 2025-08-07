@@ -542,3 +542,45 @@ p {
   height: auto;
   margin-bottom: 1rem;
 }
+
+/* Testimonials section
+ * A simple section for displaying client testimonials.
+ * Uses a light background to contrast against the surrounding sections and
+ * centres its content. Testimonial cards mirror the service‑card aesthetic but
+ * emphasise quotes with italic text and clearly identify the author. */
+.testimonials {
+  background-color: var(--light-gray);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.testimonials h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.testimonials-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.testimonial-card {
+  flex: 1 1 280px;
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--shadow);
+  font-style: italic;
+}
+
+.testimonial-card p {
+  margin-bottom: 1rem;
+}
+
+.testimonial-card .author {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--primary-color);
+}
