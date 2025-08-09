@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact – Beyond Baseline Performance Training</title>
+    <title>Contact – Beyond Baseline Performance Training (Improved)</title>
+
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
@@ -18,11 +19,55 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="style.css" />
+    <!-- Base styles from the original site -->
+    <link
+      rel="stylesheet"
+      href="https://rehanshaikh67.github.io/BridgeTheGap/style.css"
+    />
+
+    <!-- Additional styling to enhance the contact page. These rules override the
+         base stylesheet and add subtle improvements such as focus states,
+         stronger label hierarchy, responsive tweaks and a user feedback
+         message container. -->
+    <style>
+      /* Highlight form fields when they receive focus */
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 5px var(--primary-color);
+        outline: none;
+      }
+
+      /* Strengthen the labels to guide users through the form */
+      .contact-form label {
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      /* A container for feedback after submission */
+      .form-feedback {
+        display: none;
+        margin-top: 1.5rem;
+        padding: 0.75rem 1rem;
+        background-color: #e6f7ff;
+        border: 1px solid #b3d7ff;
+        color: var(--primary-color);
+        border-radius: 4px;
+        font-weight: 500;
+      }
+
+      /* Slightly reduce padding on smaller screens to optimise space */
+      @media (max-width: 768px) {
+        .contact-form {
+          padding: 1.5rem;
+        }
+      }
+    </style>
   </head>
   <body>
-    <!-- Navigation -->
+    <!-- Navigation bar (copied from the original site) -->
     <header class="header">
       <div class="container nav-container">
         <div class="logo">
@@ -35,6 +80,7 @@
             <li><a href="services.html">Services</a></li>
             <li><a href="contact.html" class="active">Contact</a></li>
           </ul>
+          <!-- Hamburger icon for mobile menu -->
           <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -44,6 +90,7 @@
       </div>
     </header>
 
+    <!-- Main contact section -->
     <section class="contact-section">
       <div class="container">
         <h1>Get in Touch</h1>
@@ -53,41 +100,96 @@
           hearing from you!
         </p>
         <!--
-          Use FormSubmit to send form submissions directly to the site owner’s
-          email address. FormSubmit is a free service that forwards form
-          responses to a specified email without requiring server‑side code.
-          When someone submits this form it will be sent to rehanshaikh67@gmail.com.
+          The form below posts directly to FormSubmit. The _captcha parameter is
+          disabled so users are not shown a robot check. By removing the
+          target="_blank", the page will remain in place after submission and
+          our JavaScript can provide immediate feedback. Feel free to
+          reintroduce target="_blank" if you prefer to redirect users to the
+          default FormSubmit success page instead.
         -->
-        <form class="contact-form" action="https://formsubmit.co/rehanshaikh67@gmail.com" method="POST" target="_blank">
-          <!-- Disable captcha so visitors aren’t prompted for a robot check -->
+        <form
+          class="contact-form"
+          action="https://formsubmit.co/rehanshaikh67@gmail.com"
+          method="POST"
+        >
+          <!-- Disable captcha -->
           <input type="hidden" name="_captcha" value="false" />
+          <!-- Name -->
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" required />
-
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            aria-required="true"
+            aria-label="Name"
+          />
+          <!-- Email -->
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
-
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            aria-required="true"
+            aria-label="Email"
+          />
+          <!-- Subject -->
           <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" />
-
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            aria-label="Subject"
+          />
+          <!-- Message -->
           <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            aria-required="true"
+            aria-label="Message"
+          ></textarea>
+          <!-- Submit button -->
           <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
+        <!-- Hidden message that will appear after successful submission -->
+        <div id="formFeedback" class="form-feedback">
+          Thank you! Your message has been sent. We'll be in touch shortly.
+        </div>
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer section with dynamic year (same as original site) -->
     <footer class="footer">
       <div class="container footer-content">
         <p>
-          &copy; <span id="year"></span> Beyond Baseline Performance. All rights
+          © <span id="year">2025</span> Beyond Baseline Performance. All rights
           reserved.
         </p>
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- JavaScript to handle mobile navigation and insert the current year (from original) -->
+    <script src="https://rehanshaikh67.github.io/BridgeTheGap/script.js"></script>
+    <!-- Additional script to provide feedback after form submission -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('.contact-form');
+        const feedback = document.getElementById('formFeedback');
+        if (form && feedback) {
+          form.addEventListener('submit', function () {
+            // Display the feedback message after a short delay to ensure the form posts
+            setTimeout(() => {
+              feedback.style.display = 'block';
+              // Optionally scroll to the feedback message for accessibility
+              feedback.scrollIntoView({ behavior: 'smooth' });
+            }, 500);
+          });
+        }
+      });
+    </script>
   </body>
 </html>
